@@ -4,6 +4,12 @@
  */
 package edu.ijse.layered.dao;
 
+import edu.ijse.layered.dao.custom.CustomerDao;
+import edu.ijse.layered.dao.custom.impl.CustomerDaoImpl;
+import edu.ijse.layered.dao.custom.impl.ItemDaoImpl;
+import edu.ijse.layered.dao.custom.impl.OrderDaoImpl;
+import edu.ijse.layered.dao.custom.impl.OrderDetailImpl;
+
 /**
  *
  * @author Lihini
@@ -23,13 +29,13 @@ public class DaoFactory {
     public SuperDao getDao(DaoTypes type){
         switch (type) {
             case ITEM:
-                return null;
+                return new ItemDaoImpl();
             case CUSTOMER:
-                return null;
+                return new CustomerDaoImpl();
             case ORDER:
-                return null;
+                return new OrderDaoImpl();
             case ORDER_DETAIL:
-                return null;
+                return new OrderDetailImpl();
             default:
                 return null;
         }
